@@ -24,4 +24,22 @@ router.get('/books', (req, res, next) => {
     .catch(error => console.log(error));
 });
 
+//route bookID
+
+router.get('/books/:bookId',(req, res, next) => {
+  
+  Book
+    .findById(req.params.bookId)
+
+    .then(theBook => {
+
+      res.render('book-details', { book: theBook });
+    
+    }) // closing .then
+
+    .catch(error => console.log(error));
+
+  // console.log('The ID from the URL is: ', bookId)
+  // res.render('bookInformation')
+});
 module.exports = router;
