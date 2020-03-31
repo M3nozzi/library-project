@@ -1,5 +1,8 @@
-<h1>{{book.title}}</h1>
-<span>Written by: {{book.author}}</span>
-<p>Summary: {{book.description}}</p>
-<p>Rating: {{book.rating}}/10</p>
-<a href="/books">Back</a>
+<span><a href="/books">Back</a></span>
+
+{{#with book}}
+<h1>{{title}}</h1>
+<h4>Author: {{author}} - rating: {{rating}}</h4>
+<p>{{description}}</p>
+<span><a href="/book-edit/{{_id}}">EDIT</a></span><br>
+{{/with}}
