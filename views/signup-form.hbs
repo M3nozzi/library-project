@@ -1,0 +1,19 @@
+  
+<form id="form" action="/signup" method="POST">
+  <label for="username">Username</label><br>
+  <input type="text" name="username" placeholder="Your username" required>
+
+<label for="email">Email</label><br>
+  <input type="email" name="email" placeholder="jon.snow@got.com" required>
+
+  <label for="password">Password</label><br>
+  <input type="password" name="password" placeholder="********" required>
+  {{#if errorMessage}}
+  <div class="error-message">
+    {{errorMessage}}
+  </div>
+  {{/if}}
+  <button type="submit">Create account</button>
+  {{!-- <div class="g-signin2" data-onsuccess="onSignIn"></div> --}}
+</form>
+{{!-- <script src="https://apis.google.com/js/platform.js" async defer></script> --}}

@@ -1,11 +1,15 @@
 <h1>Books</h1>
-<p>Welcome to Books</p>
+<p>{{#if user}}Hey {{user.username}}, {{/if}}Welcome to Books</p>
 
 <ul>
   {{#each books}}
   <li>
-    <a href="/books/{{this._id}}">{{this.title}}</a>
-    <a href="/book-delete/{{_id}}">DEL</a>
-    </li>
+    <a href="/book/{{_id}}">{{title}}</a>
+    {{#if isOwner}}
+    | <a href="/book-delete/{{_id}}">DEL</a>
+    {{/if}}
+  </li>
   {{/each}}
 </ul>
+
+<div id="map"></div>

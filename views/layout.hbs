@@ -1,16 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
   <link rel="stylesheet" href="/stylesheets/style.css" />
+  {{!-- <meta name="google-signin-client_id" content="467436525173-hj2324vt1u5po1c1idnh25k45lq3uth8.apps.googleusercontent.com
+.apps.googleusercontent.com"> --}}
 </head>
+
 <body>
+  {{#unless user}}
+  <span><a href="/login">login</a></span><br>
+  <span><a href="/signup">signup</a></span><br>
+  {{else}}
+  <span><a href="/logout">logout</a></span><br>
+  <span><a href="/book-add">new book</a></span><br>
+  {{/unless}}
 
   {{{body}}}
 
+  <!--  Axios CDN  -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWtUJE6liUka9YJjpHByRXmGRaHDOaShc"></script>
   <script src="/javascripts/script.js"></script>
 </body>
+
 </html>
+
+ 
